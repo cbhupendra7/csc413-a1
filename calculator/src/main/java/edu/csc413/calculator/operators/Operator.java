@@ -35,20 +35,6 @@ public abstract class Operator {
      *              the token is a valid operator
      * @return Operator An instantiation of the Operator subclass corresponding to token or null if the token is invalid
      */
-     public static boolean isValid (String token){
-         try {
-             Integer.parseInt(token);
-             return true;
-         } catch (NumberFormatException exception) {
-             return false;
-         }
-         //if(token.equals())
-//         if(token.equals("+") || ("-") || ("^")||("*")|| ("/")){
-//             return true;
-//         }
-//         return false;
-     }
-
 
     public static Operator create(String token) {
 

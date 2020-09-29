@@ -9,10 +9,10 @@ import java.util.StringTokenizer;
 
 /** Class containing functionality for evaluating arithmetic expressions. */
 public class Evaluator {
-    private Stack<Operand> operandStack;
-    private Stack<Operator> operatorStack;
+    public Stack<Operand> operandStack;
+    public Stack<Operator> operatorStack;
 
-    Evaluator() {
+    public Evaluator() {
         this.operandStack = new Stack<>();
         this.operatorStack = new Stack<>();
     }
@@ -132,7 +132,8 @@ public class Evaluator {
             return (operandStack.pop().getValue());
 
         }
-    }
+
+}
 
 
 
