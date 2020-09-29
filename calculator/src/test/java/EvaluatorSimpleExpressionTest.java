@@ -1,6 +1,6 @@
 
-
 import edu.csc413.calculator.evaluator.Evaluator;
+import edu.csc413.calculator.exceptions.InvalidExpressionException;
 import org.junit.jupiter.api.Test;
 
 import java.util.EmptyStackException;
@@ -11,29 +11,20 @@ public class EvaluatorSimpleExpressionTest {
 
     public Evaluator evaluator;
 
-    /**
-     no result expected here as there is unpaired parentheses
-     * */
-
-@Test
-  public void unbalanceExpressionTest() {
-            String testExpression = "2+3*9((6+1)-8";
-            assertThrows(NullPointerException.class, () -> {
-        this.evaluator.evaluateExpression(testExpression);
-        });
-
-        }
-    /***
-     * no result expected as there is invalid Operator
-     */
-
 
     @Test
-    public void invalidOperatorExpressionTest() {
-            String testExpression = "5+8**10";
-            assertThrows(EmptyStackException.class, () -> {
-        this.evaluator.evaluateExpression(testExpression);
-        });
+    public void OddOperand() {
+        String Expression = "9+((6+1)-8";
+        Evaluator ExpressionTest = new Evaluator();
+        assertThrows(InvalidExpressionException.class, () -> ExpressionTest.evaluateExpression(Expression));
+
+    }
+
+    @Test
+    public void DoubleOperator() {
+            String Expression = "8**10";
+            Evaluator ExpressionTest = new Evaluator();
+            assertThrows(EmptyStackException.class, () -> ExpressionTest.evaluateExpression(Expression));
         }
  }
 

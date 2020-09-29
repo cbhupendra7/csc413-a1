@@ -27,7 +27,7 @@ public class DivideOperatorTest {
         Operand rhs = new Operand(5);
         DivideOperator so = new DivideOperator();
         Operand result = new Operand(so.execute(lhs, rhs).getValue());
-        assertThat(result.getValue(), is(equalTo(5)));
+        assertThat(result.getValue(), is(equalTo(2)));
 
     }
     @Test
